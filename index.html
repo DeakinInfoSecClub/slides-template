@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>{{ title }}</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="./vendor/css/reset.css">
+  <link rel="stylesheet" href="./vendor/css/reveal.css">
+  <link rel="stylesheet" href="./vendor/lib/css/monokai.css">
+  <style>
+    code {
+      white-space: pre-wrap;
+    }
+
+    span.smallcaps {
+      font-variant: small-caps;
+    }
+
+    span.underline {
+      text-decoration: underline;
+    }
+
+    div.column {
+      display: inline-block;
+      vertical-align: top;
+      width: 50%;
+    }
+
+  </style>
+  <link rel="stylesheet" href="./vendor/css/theme/black.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement('link');
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match(/print-pdf/gi) ? './vendor/css/print/pdf.css' :
+      './vendor/css/print/paper.css';
+    document.getElementsByTagName('head')[0].appendChild(link);
+
+  </script>
+  <style>
+
+    @font-face {
+      font-family: "TopazPlus";
+      src: url("https://deakininfosec.com.au/static/fonts/topazplus120010.ttf");
+    }
+
+    :root {
+      font-size: 24px;
+    }
+
+    body {
+      background: url('https://deakininfosec.com.au/static/img/pattern.svg') #111;
+      /* animation: background-move 120s infinite linear; */
+    }
+
+    a.disc-logo {
+      opacity: 0.5;
+      transition: opacity 0.5s;
+      width: 160px; 
+      border: 0px solid transparent; 
+      position: fixed;
+      left: 8px; 
+      bottom: 8px;
+      line-height: 0;
+      overflow: hidden;
+      z-index: 5;
+    }
+
+    a.disc-logo img {
+      width: 100%;
+    }
+
+    html.no-logo a.disc-logo {
+      opacity: 0;
+      display: none;
+      user-select: none;
+    }
+
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4, .reveal h5, .reveal h6 {
+      font-family: "TopazPlus", "Fira Code", monospace;
+      text-transform: none;
+    }
+
+    .reveal .progress {
+      color: #ff2e88;
+      height: 2px;
+    }
+
+    .reveal code {
+      font-family: "Fira Code", monospace;
+      background: #222;
+      color: #fff;
+      border-radius: 0.1em;
+      padding: 0.1em 0.2em;
+      font-size: 0.9em;
+    }
+
+    .reveal pre code {
+      padding: 0.5em 0.75em;
+    }
+
+    .reveal table {
+      font-size: 0.75em;
+    }
+
+    .reveal table tr td, .reveal table tr th {
+      border-bottom: 0px transparent solid;
+    }
+
+    .reveal table tr td:first-of-type {
+      font-size: 0.75em;
+      min-width: 300px;
+    }
+
+    .reveal p {
+      font-size: 1.25rem;
+    }
+
+    img.profile {
+      border-radius: 200px;
+      border: 0px transparent solid !important;
+      width: 200px;
+      height: 200px;
+    }
+
+    span.handle {
+      font-family: "Fira Code", monospace;
+      text-transform: lowercase;
+    }
+
+    .inset {
+      position: absolute;
+      background: rgba(0,0,0,.8);
+      color: white;
+      padding: 0.2em 0.4em;
+    }
+
+    .reveal iframe[src*="youtube"] {
+      width: 100% !important;
+      min-height: 80vh;
+    }
+
+    .slides section.has-dark-background,
+    .slides section.has-dark-background h2 {
+      color: #fff !important;
+    }
+
+    .slides section.has-light-background,
+    .slides section.has-light-background h2 {
+      color: #222 !important;
+    }
+
+  </style>
+  <!--[if lt IE 9]>
+  <script src="./reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+
+<body>
+  <a class="disc-logo" target="_blank" href="https://deakininfosec.com.au"><img class="disc-logo" src="https://deakininfosec.com.au/static/img/disc-white.png" style=""/></a>
+  <div class="reveal">
+    <div class="slides">
+      <section class="slide"><!-- a new horizontal slide -->
+        <section id="title"><!-- a new vertical slide (because it is nested in the vertical slide -->
+          <h1>
+            {{ title }} <!-- replace with title -->
+          </h1>
+          <h4>
+            {{ tagline }}<!-- replace with tagline --><br /><br />
+            <img class="profile" src="{{ avatar_url }}" /><br/>
+            <span class="handle"><span class="citation" data-cites="ketz">{{ author }}</span></span>
+          </h4>
+        </section>
+      </section>
+      <section>
+        <section id="whatever-you-call-this-page" data-markdown>
+          <textarea data-template> <!-- contents of this element is parsed and rendered from markdown. -->
+
+# Slide title
+Paragraph content goes here. Keep an eye out for indentation because it is sensitive in this context. Line spacings are also quite vital so check your work as you go.<!-- .element: class="fragment" -->
+
+          </textarea>
+        </section>
+        <section id="more-things-are-underneath" data-markdown>
+          <textarea data-template>
+
+# w00 more content
+More things are underneath the previous slide because this is a nested `<section>`.
+<!-- you can write source code in here easily too with markdown, instant win! -->
+```python 
+def hello(name):
+    print(f"Hello there, {name}")
+```
+<!-- .element: class="fragment" -->
+
+<!-- sneaking comments like the above one go AFTER the content you want to make into a fragment (or can modify any other html attribute you want to change). -->
+          </textarea>
+        </section>
+        <section id="bg-1" data-background-color="#000" data-background="https://media.giphy.com/media/Q2W4hziDOyzu0/giphy.gif">
+          <h6>Backgrounds can be gifs, pretty cool.</h6>
+        </section>
+        <section id="bg-2" data-background-iframe="https://deakininfosec.com.au/">
+          <h6>Backgrounds can also be iframes</h6>
+        </section>
+      </section>
+      <section class="slide">
+        <section data-markdown>
+          <textarea data-template>
+#### To move horizontally...
+...we have to end the first-level `<section>` and start a new one.
+
+```bash
+#!/bin/bash
+
+echo "Enter directory name"
+read ndir
+
+if [ -d "$ndir" ]
+then
+  echo "Directory exist"
+else
+  `mkdir $ndir`
+  echo "Directory created"
+fi
+```
+<!-- .element: style="max-width: 70%; font-size: 0.75rem;" -->
+          </textarea>
+        </section>
+        <section data-state="no-logo" data-background-iframe="https://www.youtube.com/embed/FtWjGSm8y-M">
+        </section>
+      </section>
+      <section>
+        <section data-markdown data-background="https://media.giphy.com/media/1jl173guBKkbvC03rQ/giphy.gif">
+          <textarea data-template>
+            ## Questions?
+          </textarea>
+        </section>
+        <section data-markdown>
+          <textarea data-template>
+            #### Thanks for coming 🙌
+
+            ![That's all folks](https://media.giphy.com/media/lD76yTC5zxZPG/giphy.gif)
+          </textarea>
+        </section>
+      </section>
+    </div>
+  </div>
+
+  <script src="./vendor/js/reveal.js"></script>
+
+  <script>
+    // Full list of configuration options available at:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+      // Display the page number of the current slide
+      slideNumber: true,
+      // Hide the controls in the corner
+      controls: false,
+      // Push each slide change to the browser history
+      history: true,
+      // Transition style
+      transition: 'slide', // none/fade/slide/convex/concave/zoom
+      // The "normal" size of the presentation, aspect ratio will be preserved
+      // when the presentation is scaled to fit different resolutions. Can be
+      // specified using percentage units.
+      width: "100%",
+      height: "100%",
+
+      // Optional reveal.js plugins
+      dependencies: [{
+          src: './vendor/lib/js/classList.js',
+          condition: function () {
+            return !document.body.classList;
+          }
+        },
+        {
+          src: './vendor/plugin/zoom-js/zoom.js',
+          async: true
+        },
+        {
+          src: './vendor/plugin/notes/notes.js',
+          async: true
+        },
+        {
+          src: './vendor/plugin/markdown/marked.js',
+          async: true
+        },
+        {
+          src: './vendor/plugin/markdown/markdown.js',
+          async: true
+        },
+        {
+          src: './vendor/plugin/highlight/highlight.js',
+          async: true
+        }
+      ]
+    });
+
+  </script>
+</body>
+
+</html>
